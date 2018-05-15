@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
 
     let help = new Discord.RichEmbed()
     .setTitle("**Hai! Saya AbonSapi.** :blush:")
-    .setDescription("Dibawah ini adalah beberapa perintah yang AbonSapi ketahui.")
+    .setDescription("Dibawah ini adalah beberapa perintah yang bot AbonSapi ketahui.")
     .addField("AbonSapi", "`help, ping, botinfo`")
     .addField("Server", "`tempmute, warn, warnlevel, setmutetime, serverinfo, addrole, removerole`")
     .addField("Contoh Perintah", "a!<perintah> help")
