@@ -47,7 +47,7 @@ bot.on("message", async message => {
     }
 
     //prefix
-    if(message.content === `443858296781144065`) {
+    if(message.content === `<@443858296781144065>`) {
         let abonSapi = new Discord.RichEmbed()
             .setDescription("**Apakah kamu bingung ?** :rolling_eyes: ")
             .addField("**Prefix**", prefix)
