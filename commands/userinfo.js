@@ -9,6 +9,13 @@ module.exports.run = async (bot, message, args) => {
      */
     let user = message.mentions.users.first();
     let author = message.author;
+
+    let status = {
+        online: "Online",
+        idle: "Idle",
+        dnd: "Do Not Disturb",
+        offline: "Offline"
+    }
     
     user = user ? user : author;
     let uEmbed = new Discord.RichEmbed()
@@ -17,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor("RANDOM")
     .addField("ID", user.id, true)
     .addField("Username", user.username, true)
-    .addField("Status", user.presence.status, true)
+    .addField("Status", status[user.presence.status], true)
     .addField("Bot ?", user.bot ? `yap` : `bukan`, true);
 
     message.channel.send(uEmbed);
