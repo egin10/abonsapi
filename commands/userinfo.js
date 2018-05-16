@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("ID", user.id, true)
     .addField("Username", user.username, true)
     .addField("Status", user.presence.status, true)
-    .addField("Bot ?", user.bot, true);
+    .addField("Bot ?", user.bot ? `yap` : `bukan`, true);
 
     message.channel.send(uEmbed);
     
