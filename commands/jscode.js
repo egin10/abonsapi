@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const fs = require('fs');
 
 module.exports.run = async (bot, message, args) => {
     /**
@@ -8,10 +7,16 @@ module.exports.run = async (bot, message, args) => {
      * 
      * egin10
      */
+    let code = args.join(" ");
+
+    let info = new Discord.RichEmbed()
+        .setTitle("Cara menggunakan perintah jscode")
+        .addField("Contoh perintah", "a!jscode let a = 2;")
+        .addField("Fungsi jscode", "Menampilkan pesan dalam bentuk linter code di discord chat (bukan eval()).");
+
+    if(!code) return message.channel.send(info);
 
     try {
-        let code = args.join(" ");
-
         message.channel.sendCode("xl", clean(code));
     } catch(err) {
         message.channel.sendMessage(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
