@@ -20,8 +20,8 @@ module.exports.run = async (bot, message, args) => {
         let ev = new Discord.RichEmbed()
             .setTitle("Evaluate")
             .setColor("RANDOM")
-            .addField(":inbox_tray: Input", evaled)
-            .addField(":outbox_tray: Output", clean(evaled));
+            .addField(":inbox_tray: Input", await evaled)
+            .addField(":outbox_tray: Output", await clean(evaled));
         
         message.channel.send(ev);
     } catch(err) {
