@@ -9,10 +9,7 @@ module.exports.run  = async (bot, message, args) => {
      * 
      * egin10
      */
-    _prefix          = botconfig.prefix;
-        if(botconfig[message.guild.id]){
-            _prefix  = botconfig[message.guild.id].prefix;
-        }
+    let prefix          = botconfig.prefix;
 
     let bicon       = bot.user.displayAvatarURL;
     let botEmbed    = new Discord.RichEmbed()
@@ -21,7 +18,7 @@ module.exports.run  = async (bot, message, args) => {
         .setThumbnail(bicon)
         .addField("Nama Bot", bot.user.username)
         .addField("Dibuat pada", bot.user.createdAt)
-        .addField("Prefix", _prefix)
+        .addField("Prefix", prefix)
         .addField("Dibuat oleh", "It'sMe#0184");
 
     message.channel.send(botEmbed);
