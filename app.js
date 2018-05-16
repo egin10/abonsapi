@@ -56,4 +56,6 @@ bot.on("message", async message => {
 
 });
 
-bot.login(botconfig.token);
+// bot.login(botconfig.token);
+
+bot.login(precess.env.BOT_TOKEN);
