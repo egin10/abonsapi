@@ -15,14 +15,15 @@ module.exports.run = async (bot, message, args) => {
         let evaled  = eval(code);
 
         if(typeof evaled === "string")
-            evaled = require("util").inspect(evaled);
+        evaled = require("util").inspect(evaled);
+        result = await clean(evaled);
         
         let ev = new Discord.RichEmbed()
             .setAuthor(`${message.author.tag}`, message.author.avatarURL)
             .setTitle("Evaluate")
             .setColor("RANDOM")
             .addField(":inbox_tray: Input", `\`\`\`xl\n${code}\`\`\``)
-            .addField(":outbox_tray: Output", `\`\`\`xl\n${await clean(evaled)}\`\`\``);
+            .addField(":outbox_tray: Output", `\`\`\`xl\n${result}\`\`\``);
         
         message.channel.send(ev);
     } catch(err) {
