@@ -23,19 +23,19 @@ module.exports.run = async (bot, message, args) => {
         const evaled = eval(code);
         const clean = await bot.clean(bot, evaled);
         if (code) {
-            const embed = new Discord.RichEmbed()
-            .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-            .setColor("RANDOM")
-            .addField(":inbox_tray: **Input**", `${code}`)
-            .addField(":outbox_tray: **Output**", `\`\`\`js\n${clean}\n\`\`\``)
-            message.channel.send(embed);
+            // const embed = new Discord.RichEmbed()
+            // .setAuthor(`${message.author.tag}`, message.author.avatarURL)
+            // .setColor("RANDOM")
+            // .addField(":inbox_tray: **Input**", `${code}`)
+            // .addField(":outbox_tray: **Output**", `\`\`\`js\n${clean}\n\`\`\``);
+            message.channel.send(code);
         } else {
-            const embed = new Discord.RichEmbed()
-            .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-            .setColor("RANDOM")
-            .addField(":inbox_tray: **Input**", `none`)
-            .addField(":outbox_tray: **Output**", `\`\`\`js\n${clean}\n\`\`\``)
-            message.channel.send(embed);
+            // const embed = new Discord.RichEmbed()
+            // .setAuthor(`${message.author.tag}`, message.author.avatarURL)
+            // .setColor("RANDOM")
+            // .addField(":inbox_tray: **Input**", `none`)
+            // .addField(":outbox_tray: **Output**", `\`\`\`js\n${clean}\n\`\`\``);
+            message.channel.send(code);
         }
     } catch (err) {
         message.channel.send(`\`ERROR\` \`\`\`xl\n${await bot.clean(bot, err)}\n\`\`\``);
