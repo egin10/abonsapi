@@ -17,7 +17,13 @@ module.exports.run = async (bot, message, args) => {
         if(typeof evaled === "string")
             evaled = require("util").inspect(evaled);
         
-        message.channel.sendCode("xl", clean(evaled));
+        let ev = new Discord.RichEmbed()
+            .setTitle("Evaluate")
+            .setColor("RANDOM")
+            .addField(":inbox_tray: Input", evaled)
+            .addField(":outbox_tray: Output", clean(evaled));
+        
+        message.channel.send(ev);
     } catch(err) {
         message.channel.sendMessage(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
     }
