@@ -9,19 +9,7 @@ module.exports.run = async (bot, message, args) => {
      * egin10
      */
 
-    if(message.author.id !== '378940242876432396') return message.channel.send("Maaf, Kamu bukan Owner ku!");
-    
-    try {
-      const code = args.join(" ");
-      let evaled = eval(code);
-
-      if (typeof evaled !== "string")
-        evaled = require("util").inspect(evaled);
-
-        message.channel.send(clean(evaled), {code:"xl"});
-    } catch (err) {
-      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
-    }
+    if(message.author.id !== '378940242876432396') return;
 
     // let eval = new Discord.RichEmbed()
     // .setTitle("**Evaluate JavaScript**")
@@ -29,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
     // .addField(":inbox_tray: **Input**", code)
     // .addField(":outbox_tray: **Output**", eval(toString(code)));
     
-    // message.channel.send(eval);
+    message.channel.send(args[0]);
 }
 
 module.exports.help = {
