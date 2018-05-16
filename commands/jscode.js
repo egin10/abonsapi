@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Contoh perintah", "a!jscode let a = 2;")
         .addField("Fungsi jscode", "Menampilkan pesan dalam bentuk linter code di discord chat (bukan eval()).");
 
-    if(!code) return message.channel.send(info);
+    if(!code || code == "help") return message.channel.send(info);
 
     try {
         message.channel.sendCode("xl", clean(code));
