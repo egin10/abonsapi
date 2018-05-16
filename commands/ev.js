@@ -9,9 +9,20 @@ module.exports.run = async (bot, message, args) => {
      * egin10
      */
 
-    if(message.author.id !== '378940242876432396') return;
-    const code = args.join(" ");
+    if(message.author.id !== '378940242876432396') return message.channel.send("Maaf, Kamu bukan Owner ku!");
     
+    try {
+      const code = args.join(" ");
+      let evaled = eval(code);
+
+      if (typeof evaled !== "string")
+        evaled = require("util").inspect(evaled);
+
+        message.channel.send(clean(evaled), {code:"xl"});
+    } catch (err) {
+      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+    }
+
     // let eval = new Discord.RichEmbed()
     // .setTitle("**Evaluate JavaScript**")
     // .setColor("RANDOM")
@@ -19,27 +30,6 @@ module.exports.run = async (bot, message, args) => {
     // .addField(":outbox_tray: **Output**", eval(toString(code)));
     
     // message.channel.send(eval);
-    try {
-        const evaled = eval(code);
-        const clean = await bot.clean(bot, evaled);
-        if (code) {
-            // const embed = new Discord.RichEmbed()
-            // .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-            // .setColor("RANDOM")
-            // .addField(":inbox_tray: **Input**", `${code}`)
-            // .addField(":outbox_tray: **Output**", `\`\`\`js\n${clean}\n\`\`\``);
-            message.channel.send(code);
-        } else {
-            // const embed = new Discord.RichEmbed()
-            // .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-            // .setColor("RANDOM")
-            // .addField(":inbox_tray: **Input**", `none`)
-            // .addField(":outbox_tray: **Output**", `\`\`\`js\n${clean}\n\`\`\``);
-            message.channel.send(code);
-        }
-    } catch (err) {
-        message.channel.send(`\`ERROR\` \`\`\`xl\n${await bot.clean(bot, err)}\n\`\`\``);
-    }
 }
 
 module.exports.help = {
