@@ -9,6 +9,13 @@ module.exports.run = async (bot, message, args) => {
      * egin10
      */
 
+    let info = new Discord.RichEmbed()
+        .setTitle("Cara menggunakan perintah addrole")
+        .setColor("RANDOM")
+        .addField("Contoh perintah", "a!addrole addrole @member namarole")
+        .addField("Fungsi addrole", "Memberikan role kepada user.");
+    if(!args || args[0] == "help") return message.channel.send(info);
+    
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("Maaf, kamu tidak memiliki izin.");
     
     let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);

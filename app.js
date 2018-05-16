@@ -31,16 +31,6 @@ bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
 
-    //prefix
-    if(message.content === `443858296781144065`) {
-
-        let abonSapi = new Discord.RichEmbed()
-            .setDescription("**Apakah kamu bingung ?** :rolling_eyes: ")
-            .addField("**Prefix**", prefix)
-            .addField("**Bantuan lebih banyak**", `${prefix}help`);
-        return message.channel.send(abonSapi);
-    }
-    
     let prefix = botconfig.prefix;
     if (!message.content.startsWith(prefix)) return;
     

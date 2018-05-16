@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
     .setDescription("Dibawah ini adalah beberapa perintah yang bot AbonSapi ketahui.")
     .addField("AbonSapi", "`help, ping, botinfo, jscode`")
     .addField("Server", "`tempmute, warn, warnlevel, setmutetime, serverinfo, addrole, removerole`")
-    .addField("Contoh Perintah", "a!<perintah>")
+    .addField("Info Perintah", "a!<perintah> help")
     .addField("Invite Link", "[Invite](https://discordapp.com/api/oauth2/authorize?client_id=443858296781144065&permissions=451995702&scope=bot)")
     .setFooter("Terimakasih");
     
