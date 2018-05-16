@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
             .setTitle("Evaluate")
             .setColor("RANDOM")
             .addField(":inbox_tray: Input", `\`\`\`xl\n${code}\`\`\``)
-            .addField(":outbox_tray: Output", await clean(evaled));
+            .addField(":outbox_tray: Output", `\`\`\`xl\n${clean(evaled)}\`\`\``);
         
         message.channel.send(ev);
     } catch(err) {
