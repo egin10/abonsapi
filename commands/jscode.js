@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     try {
         let code = args.join(" ");
 
-        message.channel.sendCode("xl", clean(evaled));
+        message.channel.sendCode("xl", clean(code));
     } catch(err) {
         message.channel.sendMessage(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
     }
