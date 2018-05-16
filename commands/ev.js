@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
             .setAuthor(`${message.author.tag}`, message.author.avatarURL)
             .setTitle("Evaluate")
             .setColor("RANDOM")
-            .addField(":inbox_tray: Input", code)
+            .addField(":inbox_tray: Input", `\`\`\`xl\n${code}\`\`\``)
             .addField(":outbox_tray: Output", await clean(evaled));
         
         message.channel.send(ev);
