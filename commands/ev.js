@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
     // .addField(":inbox_tray: **Input**", code)
     // .addField(":outbox_tray: **Output**", eval(toString(code)));
     
-    message.channel.send(args[0]);
+    message.channel.send(args);
 }
 
 module.exports.help = {
