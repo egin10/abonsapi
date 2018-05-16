@@ -18,9 +18,10 @@ module.exports.run = async (bot, message, args) => {
             evaled = require("util").inspect(evaled);
         
         let ev = new Discord.RichEmbed()
+            .setAuthor(`${message.author.tag}`, message.author.avatarURL)
             .setTitle("Evaluate")
             .setColor("RANDOM")
-            .addField(":inbox_tray: Input", await evaled)
+            .addField(":inbox_tray: Input", code)
             .addField(":outbox_tray: Output", await clean(evaled));
         
         message.channel.send(ev);
