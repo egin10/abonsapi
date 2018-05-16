@@ -11,10 +11,10 @@ module.exports.run = async (bot, message, args) => {
     let author = message.author;
 
     let status = {
-        online: "Online",
-        idle: "Idle",
-        dnd: "Do Not Disturb",
-        offline: "Offline"
+        online: "\:online\: Online",
+        idle: "\:away\:Idle",
+        dnd: "\:dnd\: Do Not Disturb",
+        offline: "\:offline\: Offline"
     }
     
     user = user ? user : author;
