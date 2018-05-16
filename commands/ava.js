@@ -12,10 +12,9 @@ module.exports.run = async (bot, message, args) => {
     
     user = user ? user : author;
     let uEmbed = new Discord.RichEmbed()
-    .setAuthor(`${user.username}'s Info`, user.displayAvatarURL)
     .setColor("RANDOM")
     .setImage(user.displayAvatarURL)
-    .setFooter(`[open original](${user.displayAvatarURL})`);
+    .setDescription(`[open original](${user.displayAvatarURL})`);
 
     message.channel.send(uEmbed);
     
