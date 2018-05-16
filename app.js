@@ -24,7 +24,7 @@ fs.readdir("./commands/", (err, file) => {
 bot.on("ready", async () => {
     console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`);
     
-    bot.user.setActivity(`Mention aku jika ingin tau| ${bot.users.size} users in ${bot.guilds.size} servers.`);
+    bot.user.setActivity(`a!help | ${bot.users.size} users in ${bot.guilds.size} servers.`);
 });
 
 bot.on("message", async message => {
