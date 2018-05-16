@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
     .setAuthor(`${user.username}'s Info`, user.displayAvatarURL)
     .setColor("RANDOM")
     .setImage(user.displayAvatarURL)
-    .addField("url", toString(user.displayAvatarURL));
+    .addField("url", user.displayAvatarURL);
 
     message.channel.send(uEmbed);
     
