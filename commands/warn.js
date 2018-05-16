@@ -12,6 +12,12 @@ module.exports.run = async (bot, message, args) => {
      * 
      * egin10
      */
+    let info = new Discord.RichEmbed()
+        .setTitle("Cara menggunakan perintah **warn**")
+        .setColor("RANDOM")
+        .addField("Contoh perintah", "a!warn @member alasan")
+        .addField("Fungsi warn", "Melakukan Warning kepada user, warn 1 = peringatan, warn 2 = user akan di mute selama (setmutetime), warn 3 = user akan di kick.");
+    if(args[0] == "help") return message.channel.send(info);
 
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("Kamu tidak memiliki izin.");
     

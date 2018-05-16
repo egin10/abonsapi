@@ -5,11 +5,16 @@ module.exports.run = async (bot, message, args) => {
 
     /**
      * command
-     * /warn @user reason
+     * /tempmute @user waktu
      * 
      * egin10
      */
-
+    let info = new Discord.RichEmbed()
+        .setTitle("Cara menggunakan perintah **tempmute**")
+        .setColor("RANDOM")
+        .addField("Contoh perintah", "a!tempmute @member waktu")
+        .addField("Fungsi tempmute", "Melakukan mute pada user agar tidak dapat melakukan chat dan join voice channel selama waktu yang telah tentukan.");
+    if(args[0] == "help") return message.channel.send(info);
 
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!tomute) return message.reply("User tidak ditemukan.");

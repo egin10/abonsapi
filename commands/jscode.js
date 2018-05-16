@@ -10,12 +10,11 @@ module.exports.run = async (bot, message, args) => {
     let code = args.join(" ");
 
     let info = new Discord.RichEmbed()
-        .setTitle("Cara menggunakan perintah jscode")
+        .setTitle("Cara menggunakan perintah **jscode**")
         .setColor("RANDOM")
         .addField("Contoh perintah", "a!jscode let a = 2;")
         .addField("Fungsi jscode", "Menampilkan pesan dalam bentuk linter code di discord chat (bukan eval()).");
-
-    if(!code || code == "help") return message.channel.send(info);
+    if(code == "help") return message.channel.send(info);
 
     try {
         message.channel.sendCode("xl", clean(code));

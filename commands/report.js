@@ -8,10 +8,17 @@ module.exports.run = async (bot, message, args) => {
      * 
      * egin10
      */
-
+    let info = new Discord.RichEmbed()
+        .setTitle("Cara menggunakan perintah **report**")
+        .setColor("RANDOM")
+        .addField("Contoh perintah", "a!report @member alasan")
+        .addField("Fungsi report", "Melakukan report kepada user.");
+    if(args[0] == "help") return message.channel.send(info);
+    
     let rUser   = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if (!rUser) return message.channel.send("User tidak ditemukan!");
     let rReason = args.join(" ").slice(22);
+    if (!rReason) return message.channel.send("Berikan Alasan!");
 
     let reportEmbed = new Discord.RichEmbed()
         .setDescription("**Laporan**")

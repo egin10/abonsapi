@@ -8,6 +8,12 @@ module.exports.run = async (bot, message, args) => {
      * 
      * egin10
      */
+    let info = new Discord.RichEmbed()
+        .setTitle("Cara menggunakan perintah **removerole**")
+        .setColor("RANDOM")
+        .addField("Contoh perintah", "a!removerole @member namarole")
+        .addField("Fungsi removerole", "Menghapus role yang ada pada user.");
+    if(args[0] == "help") return message.channel.send(info);
 
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("Maaf, kamu tidak memiliki izin.");
     
