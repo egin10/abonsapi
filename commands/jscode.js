@@ -17,9 +17,9 @@ module.exports.run = async (bot, message, args) => {
     if(code == "help") return message.channel.send(info);
 
     try {
-        message.channel.sendCode("xl", clean(code));
+        message.channel.sendCode("js", clean(code));
     } catch(err) {
-        message.channel.sendMessage(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+        message.channel.sendMessage(`\`ERROR\` \`\`\`js\n${clean(err)}\n\`\`\``);
     }
 }
 
