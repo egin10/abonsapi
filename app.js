@@ -22,9 +22,13 @@ fs.readdir("./commands/", (err, file) => {
 });
 
 bot.on("ready", async () => {
-    console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`);
-    
-    bot.user.setActivity(`a!help | ${bot.users.size} users in ${bot.guilds.size} servers.`);
+    console.log(`Bot has started, run on ${bot.guilds.size} guilds.`);
+
+    setInterval(() =>  {
+        let status = [`ice>help`, `On ${bot.guilds.size} Server`, `With ${bot.users.size} User`];
+        let random = Math.floor(Math.random() * status.length);
+        bot.user.setActivity(status[random]);
+    }, 20000);
 });
 
 bot.on("message", async message => {

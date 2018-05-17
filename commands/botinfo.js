@@ -13,7 +13,7 @@ module.exports.run  = async (bot, message, args) => {
 
     let bicon       = bot.user.displayAvatarURL;
     let botEmbed    = new Discord.RichEmbed()
-        .setDescription("**Informasi Server**")
+        .setDescription("**Informasi Bot**")
         .setColor("#d802e8")
         .setThumbnail(bicon)
         .addField("Nama Bot", bot.user.username)
