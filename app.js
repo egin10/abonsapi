@@ -42,12 +42,12 @@ bot.on("message", async message => {
     if(commandFile) commandFile.run(bot, message, args);
 
     //greeting
-    if(cmd === `${prefix}hai`) {
+    if(cmd == `${prefix}hai`) {
         return message.channel.send("Hai juga...");
     }
 
     //prefix
-    if(message.content === `<@443858296781144065>`) {
+    if(message.content === `${bot.user.id}`) {
         let abonSapi = new Discord.RichEmbed()
             .setDescription("**Apakah kamu bingung ?** :rolling_eyes: ")
             .addField("**Prefix**", prefix)
