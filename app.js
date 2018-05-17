@@ -45,17 +45,6 @@ bot.on("message", async message => {
     let commandFile     = bot.commands.get(cmd.slice(prefix.length));
     if(commandFile) commandFile.run(bot, message, args);
 
-    //prefix
-    if(message.content === `${bot.user.id}`) {
-        let abonSapi = new Discord.RichEmbed()
-            .setDescription("**Apakah kamu bingung ?** :rolling_eyes: ")
-            .addField("**Prefix**", prefix)
-            .addField("**Info lebih banyak**", `${prefix}help`);
-        return message.channel.send(abonSapi);
-    }
-
-    if(message.content.startsWith(prefix+'hi')) message.channel.send("Hallo....");
-
 });
 
 // bot.login(botconfig.token);
