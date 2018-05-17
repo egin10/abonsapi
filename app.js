@@ -25,7 +25,7 @@ bot.on("ready", async () => {
     console.log(`Bot has started, run on ${bot.guilds.size} guilds.`);
 
     setInterval(() =>  {
-        let status = [`ice>help`, `On ${bot.guilds.size} Server`, `With ${bot.users.size} User`];
+        let status = [`a!help`, `On ${bot.guilds.size} Server`, `With ${bot.users.size} User`];
         let random = Math.floor(Math.random() * status.length);
         bot.user.setActivity(status[random]);
     }, 20000);
