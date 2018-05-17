@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
     
     setTimeout((m) => {
         m.delete();
-    }, 5000);
+    }, 3000);
 }
 
 module.exports.help = {
